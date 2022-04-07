@@ -37,6 +37,12 @@ allow-lan: false
 # "[aaaa::a8aa:ff:fe09:57d8]": bind a single IPv6 address
 bind-address: '*'
 
+# Clash 内核的外部控制端口，这里没加 secret
+# https://github.com/Dreamacro/clash-dashboard/tree/gh-pages
+# 下载编译好的 clash-dashboard 放置于指定目录，即可外部浏览器访问
+external-controller : 0.0.0.0:9090
+external-ui : /root/clashui
+
 # --------------------------------------------------
 
 # Clash 路由工作模式
