@@ -683,6 +683,7 @@ proxy-providers:
 
 # --------------------------------------------------
 # Clash 文档中的完整配置
+# url可以直接是机场的订阅链接，因为provider只会读取其中的proxies
 
   provider1:
     type: http
