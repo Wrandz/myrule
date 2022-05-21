@@ -1,5 +1,5 @@
 # 在使用过程中发现的避免翻墙的进程和网址
 
 # Onedrive规则，在ACL4SSR中有，用直连规则覆盖那里的代理规则
-PROCESS-NAME,OneDrive
-PROCESS-NAME,OneDriveUpdater
+PROCESS-NAME,OneDrive.exe
+PROCESS-NAME,OneDriveUpdater.exe
