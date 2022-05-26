@@ -230,12 +230,10 @@ case $input in
 		mv -f /root/subconverter/zyrulesdownload/* /root/subconverter/zyrules/
 		echo "All work done. Enjoy!"
 		;;
-
     [nN][oO]|[nN])
 		echo -e "\033[31m Downloading and checking work completed with overwriting stopped! ${filesnum1} -> ${filesnum2} \033[0m"
 		exit 1
-       	;;
-
+       		;;
     *)
 		echo -e "\033[31m Invalid input! Downloading and checking work completed with overwriting stopped! ${filesnum1} -> ${filesnum2} \033[0m"
 		exit 1
