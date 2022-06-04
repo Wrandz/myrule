@@ -7,6 +7,7 @@
 
 # step1 download
 wget -O /root/subconverter/zyrulesdownload/ProxyDIY.list https://raw.githubusercontent.com/Wrandz/myrule/main/ProxyDIY.list
+wget -O /root/subconverter/zyrulesdownload/DirectDIY.list https://raw.githubusercontent.com/Wrandz/myrule/main/DirectDIY.list
 wget -O /root/subconverter/zyrulesdownload/Onedrive.list https://raw.githubusercontent.com/Wrandz/myrule/main/Onedrive.list
 wget -O /root/subconverter/zyrulesdownload/Scholar.list https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Scholar.list
 wget -O /root/subconverter/zyrulesdownload/LocalAreaNetwork.list https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/LocalAreaNetwork.list
@@ -73,6 +74,7 @@ lines18=$(cat /root/subconverter/zyrules/Download.list | wc -l)
 lines19=$(cat /root/subconverter/zyrules/ChinaDomain.list | wc -l)
 lines20=$(cat /root/subconverter/zyrules/ChinaCompanyIp.list | wc -l)
 lines21=$(cat /root/subconverter/zyrules/Netflix.list | wc -l)
+lines22=$(cat /root/subconverter/zyrules/DirectDIY.list | wc -l)
 
 vslines1=$(cat /root/subconverter/zyrulesdownload/ProxyDIY.list | wc -l)
 vslines2=$(cat /root/subconverter/zyrulesdownload/Onedrive.list | wc -l)
@@ -95,6 +97,7 @@ vslines18=$(cat /root/subconverter/zyrulesdownload/Download.list | wc -l)
 vslines19=$(cat /root/subconverter/zyrulesdownload/ChinaDomain.list | wc -l)
 vslines20=$(cat /root/subconverter/zyrulesdownload/ChinaCompanyIp.list | wc -l)
 vslines21=$(cat /root/subconverter/zyrulesdownload/Netflix.list | wc -l)
+vslines22=$(cat /root/subconverter/zyrulesdownload/DirectDIY.list | wc -l)
 
 if [ ${lines1} != ${vslines1} ]; then
 	echo -e "\033[31m ProxyDIY.list ${lines1} -> ${vslines1} \033[0m"
@@ -220,6 +223,12 @@ if [ ${lines21} != ${vslines21} ]; then
 	echo -e "\033[31m Netflix.list ${lines21} -> ${vslines21} \033[0m"
 else
 	echo "Netflix.list ${lines21} -> ${vslines21}"
+fi
+
+if [ ${lines22} != ${vslines22} ]; then
+	echo -e "\033[31m DirectDIY.list ${lines22} -> ${vslines22} \033[0m"
+else
+	echo "DirectDIY.list ${lines21} -> ${vslines21}"
 fi
 
 # step3 overwrite
