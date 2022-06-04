@@ -228,7 +228,7 @@ fi
 if [ ${lines22} != ${vslines22} ]; then
 	echo -e "\033[31m DirectDIY.list ${lines22} -> ${vslines22} \033[0m"
 else
-	echo "DirectDIY.list ${lines21} -> ${vslines21}"
+	echo "DirectDIY.list ${lines22} -> ${vslines22}"
 fi
 
 # step3 overwrite
