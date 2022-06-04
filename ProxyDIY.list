@@ -1,10 +1,13 @@
 # 在使用过程中发现的需要翻墙的网址
 
+# blog websites
 DOMAIN-SUFFIX,bianyuan.xyz
 DOMAIN-SUFFIX,gogoo.club
 DOMAIN-SUFFIX,merlinblog.xyz
 DOMAIN-SUFFIX,duyaoss.com
 DOMAIN-SUFFIX,yattazen.com
+
+# 学术网站
 DOMAIN-SUFFIX,libgen.me
 DOMAIN-SUFFIX,libgen.rs
 DOMAIN-SUFFIX,libgen.is
@@ -13,6 +16,8 @@ DOMAIN-SUFFIX,booksc.org
 DOMAIN-SUFFIX,zlibcdn.com
 DOMAIN-SUFFIX,b-ok.com
 DOMAIN-SUFFIX,gsu.edu
+
+# Office
 PROCESS-NAME,POWERPNT.EXE
 PROCESS-NAME,WINWORD.EXE
 PROCESS-NAME,EXCEL.EXE
