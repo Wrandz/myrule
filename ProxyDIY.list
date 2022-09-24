@@ -1,5 +1,7 @@
 # 在使用过程中发现的需要翻墙的网址
 
+DOMAIN-SUFFIX,parsec.app
+
 # blog websites
 DOMAIN-SUFFIX,bianyuan.xyz
 DOMAIN-SUFFIX,gogoo.club
