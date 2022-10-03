@@ -1,5 +1,8 @@
 # 在使用过程中发现的需要直连的网址
 
+% 学术网站
+DOMAIN-KEYWORD,zotero
+
 # 用来诱导dns解析
 IP-CIDR,119.29.29.29/32
 
