@@ -9,8 +9,10 @@ DOMAIN-SUFFIX,merlinblog.xyz
 DOMAIN-SUFFIX,duyaoss.com
 DOMAIN-SUFFIX,yattazen.com
 DOMAIN-SUFFIX,v2rayssr.com
+DOMAIN-SUFFIX,hostloc.com
 
 # 学术网站
+DOMAIN-KEYWORD,zotero
 DOMAIN-SUFFIX,libgen.me
 DOMAIN-SUFFIX,libgen.rs
 DOMAIN-SUFFIX,libgen.is
