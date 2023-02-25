@@ -3,9 +3,6 @@
 % 学术网站
 DOMAIN-KEYWORD,zotero
 
-# 用来诱导dns解析
-IP-CIDR,119.29.29.29/32
-
 # Onedrive规则，在ACL4SSR中有，用直连规则覆盖那里的代理规则
 PROCESS-NAME,OneDrive.exe
 PROCESS-NAME,OneDriveUpdater.exe
