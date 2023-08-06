@@ -302,8 +302,6 @@ rule-providers:  # 原ipcidr中的no-resolve是生效的
     path: ./ruleset/ProxyGFWlist.yaml
 
 rules:
- - SCRIPT,plex,DIRECT,no-resolve
- - SCRIPT,v4plex,DIRECT,no-resolve
  - SCRIPT,quic,REJECT,no-resolve
  - RULE-SET,DirectDIY,DIRECT
  - RULE-SET,ProxyDIY,🔓 翻墙
