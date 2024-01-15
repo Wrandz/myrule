@@ -1,0 +1,12 @@
+name: 重定向
+desc: 常用HTTPS重定向
+
+http:
+  mitm:
+    - g.cn
+    - '*.google.cn'
+    - 'm.youtube.com'
+  url-rewrite:
+    - ^https?://(www.)?(g|google)\.cn https://www.google.com 302
+    - ^https?://(ditu|maps).google\.cn https://maps.google.com 302
+    - ^https?://m\.youtube\.com https://www.youtube.com 302
