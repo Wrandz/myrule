@@ -6,5 +6,5 @@ http:
   url-rewrite:
     - ^https://m\.youtube\.com https://www.youtube.com transparent
     - ^https://wwww\.jd\.com https://www.taobao.com transparent
-    - ^https://maps\.google\.cn https://maps.google.com transparent
+    - ^http://maps\.google\.cn https://maps.google.com transparent
     - ^http://g\.cn https://www.google.com transparent
