@@ -5,3 +5,4 @@ http:
   # HTTP(S) 重写，支持header、302、307、reject多种策略
   url-rewrite:
     - ^https://m\.youtube\.com https://www.youtube.com transparent
+    - ^https://wwww\.jd\.com https://www.taobao.com transparent
