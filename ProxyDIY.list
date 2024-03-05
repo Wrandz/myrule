@@ -14,6 +14,10 @@ DOMAIN-SUFFIX,asus.com.cn
 DOMAIN-SUFFIX,hostbuf.com
 DOMAIN-SUFFIX,sstatic.net
 
+# claude
+DOMAIN-SUFFIX,claude.ai
+DOMAIN-SUFFIX,anthropic.com
+
 # blog websites
 DOMAIN-SUFFIX,bianyuan.xyz
 DOMAIN-SUFFIX,gogoo.club
