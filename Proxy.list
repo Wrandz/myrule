@@ -6,13 +6,13 @@ DOMAIN-SUFFIX,hbkworld.com
 DOMAIN-SUFFIX,texstudio.org
 DOMAIN-SUFFIX,hitun.io
 DOMAIN-SUFFIX,mangabz.com
-DOMAIN-KEYWORD,bulianglin
 DOMAIN-KEYWORD,ysbzc
 DOMAIN-KEYWORD,sms-activate.org
 DOMAIN-SUFFIX,rpmfind.net
 DOMAIN-SUFFIX,asus.com.cn
 DOMAIN-SUFFIX,hostbuf.com
 DOMAIN-SUFFIX,sstatic.net
+DOMAIN-SUFFIX,deepl.com
 
 # blog websites
 DOMAIN-SUFFIX,bianyuan.xyz
@@ -23,6 +23,7 @@ DOMAIN-SUFFIX,yattazen.com
 DOMAIN-SUFFIX,v2rayssr.com
 DOMAIN-SUFFIX,hostloc.com
 DOMAIN-SUFFIX,ai55.cc
+DOMAIN-KEYWORD,bulianglin
 
 # 学术网站
 DOMAIN-SUFFIX,libgen.me
