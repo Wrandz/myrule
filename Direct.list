@@ -1,5 +1,8 @@
 # 在使用过程中发现的需要直连的网址
 
+# 变动ip会导致验证码,很烦
+DOMAIN-SUFFIX,m-team.cc
+
 % 学术网站
 DOMAIN-KEYWORD,zotero
 
