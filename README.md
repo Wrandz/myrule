@@ -13,6 +13,6 @@
 - 其余域名，包括[Telegram](https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Telegram.list)，[YouTube](https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/YouTube.list)和[GFWlist](https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyGFWlist.list)，走【翻墙】，基本上包含了常见的需要翻墙的内容；
 - [自定义翻墙域名](https://raw.githubusercontent.com/Wrandz/myrule/main/Proxy.list)，走【翻墙】，在使用中发现的一些小众的没有被GFWlist收录的需要翻墙的域名；
 - [自定义直连域名](https://raw.githubusercontent.com/Wrandz/myrule/main/Direct.list)，在使用中发现的一些必须要直连的域名；
-- 尚未匹配，以上都没匹配到的域名，默认直连。
+- 尚未匹配，以上都没匹配到的域名，单独【尚未匹配】控制，默认直连。
 
 如果在使用中发现，有哪个域名需要翻墙，但[自定义翻墙域名](https://raw.githubusercontent.com/Wrandz/myrule/main/Proxy.list)中没有收录，欢迎针对此提交issue或者PR，我看到了会加上。
