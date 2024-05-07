@@ -1,0 +1,232 @@
+mixed-port: 7890
+allow-lan: true
+bind-address: '*'
+mode: rule
+log-level: info
+ipv6: true
+
+script:
+  shortcuts:
+    quic: network == 'udp' and (dst_port == 443 or dst_port == 4483 or dst_port == 9305)
+
+proxy-providers:
+  jichang:
+    type: http
+    url: "https://azsub.acousticlab.site/sub?target=clash&list=true&url=订阅地址urlencode"  # 如果订阅转换地址改了，后面rule provider那里也要改一下
+    interval: 3600
+    path: ./jichang.yaml
+    health-check:  # 只要填了下面的链接，enable不开也行，因为cfw有按钮；和test latency是一个东西；一般不需要弄，因为自动选择组里面已经有interval了
+      url: http://www.gstatic.com/generate_204
+
+proxy-groups:
+  - name: ☁️ 微软云盘  # 网关里面这个要直连，不然onedrive走翻墙了
+    type: select
+    proxies:
+      - DIRECT
+      - 🔓 翻墙
+      - ♻️ 自动选择
+      - 🚀 手动切换
+      - 🇸🇬 狮城节点
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇯🇵 日本节点
+      - 🇺🇲 美国节点
+      - 🇰🇷 韩国节点
+  - name: Ⓜ️ 微软服务
+    type: select
+    proxies:
+      - DIRECT
+      - 🔓 翻墙
+      - ♻️ 自动选择
+      - 🚀 手动切换
+      - 🇸🇬 狮城节点
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇯🇵 日本节点
+      - 🇺🇲 美国节点
+      - 🇰🇷 韩国节点
+  - name: 💡 AI
+    type: select
+    proxies:
+      - 🔓 翻墙
+      - ♻️ 自动选择
+      - 🚀 手动切换
+      - DIRECT
+      - 🇸🇬 狮城节点
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇯🇵 日本节点
+      - 🇺🇲 美国节点
+      - 🇰🇷 韩国节点
+  - name: 🍊 尚未匹配
+    type: select
+    proxies:
+      - DIRECT
+      - 🔓 翻墙
+      - ♻️ 自动选择
+      - 🚀 手动切换
+      - 🇸🇬 狮城节点
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇯🇵 日本节点
+      - 🇺🇲 美国节点
+      - 🇰🇷 韩国节点
+  - name: 🔓 翻墙
+    type: select
+    proxies:
+      - ♻️ 自动选择
+      - 🚀 手动切换
+      - DIRECT
+      - 🇸🇬 狮城节点
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇯🇵 日本节点
+      - 🇺🇲 美国节点
+      - 🇰🇷 韩国节点
+  - name: 🚀 手动切换
+    type: select
+    use:
+      - jichang
+  - name: ♻️ 自动选择
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+    filter: '^(?!.*(流量|套餐|地址|官网|电报群|TG群)).*'
+    use:
+      - jichang
+  - name: 🇭🇰 香港节点
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+    filter: '^(?!.*(?:套餐|地址|官网|电报群|TG群|推荐|剩余流量)).*(?:港|HK|Hong Kong)'
+    use:
+      - jichang
+  - name: 🇯🇵 日本节点
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+    filter: '^(?!.*(?:套餐|地址|官网|电报群|TG群|推荐|剩余流量)).*(?:日本|川日|东京|大阪|泉日|埼玉|沪日|深日|[^-]日|JP|Japan)'
+    use:
+      - jichang
+  - name: 🇺🇲 美国节点
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 150
+    filter: '^(?!.*(?:套餐|地址|官网|电报群|TG群|推荐|剩余流量)).*(?:美|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|US|United States)'
+    use:
+      - jichang
+  - name: 🇨🇳 台湾节点
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+    filter: '^(?!.*(?:套餐|地址|官网|电报群|TG群|推荐|剩余流量)).*(?:台|新北|彰化|TW|Taiwan)'
+    use:
+      - jichang
+  - name: 🇸🇬 狮城节点
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+    filter: '^(?!.*(?:套餐|地址|官网|电报群|TG群|推荐|剩余流量)).*(?:新加坡|坡|狮城|SG|Singapore)'
+    use:
+      - jichang
+  - name: 🇰🇷 韩国节点
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+    filter: '^(?!.*(?:套餐|地址|官网|电报群|TG群|推荐|剩余流量)).*(?:KR|Korea|KOR|首尔|韩|韓)'
+    use:
+      - jichang
+
+rule-providers:  # 原ipcidr中的no-resolve是生效的
+
+  Direct:
+    behavior: "classical"
+    type: http
+    url: "https://azsub.acousticlab.site/getruleset?type=6&url=aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL1dyYW5kei9teXJ1bGUvbWFpbi9EaXJlY3QubGlzdA=="
+    format: 'yaml'
+    interval: 3600
+    path: ./ruleset/DirectDIY.yaml
+  Proxy:
+    behavior: "classical"
+    type: http
+    url: "https://azsub.acousticlab.site/getruleset?type=6&url=aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL1dyYW5kei9teXJ1bGUvbWFpbi9Qcm94eS5saXN0"
+    format: 'yaml'
+    interval: 3600
+    path: ./ruleset/ProxyDIY.yaml
+  OneDrive:
+    behavior: "classical"
+    type: http
+    url: "https://azsub.acousticlab.site/getruleset?type=6&url=aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL0FDTDRTU1IvQUNMNFNTUi9tYXN0ZXIvQ2xhc2gvT25lRHJpdmUubGlzdA=="
+    format: 'yaml'
+    interval: 3600
+    path: ./ruleset/OneDrive.yaml
+  Microsoft:
+    behavior: "classical"
+    type: http
+    url: "https://azsub.acousticlab.site/getruleset?type=6&url=aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL0FDTDRTU1IvQUNMNFNTUi9tYXN0ZXIvQ2xhc2gvTWljcm9zb2Z0Lmxpc3Q="
+    format: 'yaml'
+    interval: 3600
+    path: ./ruleset/Microsoft.yaml
+  OpenAI:
+    behavior: "classical"
+    type: http
+    url: "https://azsub.acousticlab.site/getruleset?type=6&url=aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL1JlcGN6L1Rvb2wvWC9DbGFzaC9SdWxlcy9PcGVuQUkubGlzdA=="
+    format: 'yaml'
+    interval: 3600
+    path: ./ruleset/OpenAI.yaml
+  Claude:
+    behavior: "classical"
+    type: http
+    url: "https://azsub.acousticlab.site/getruleset?type=6&url=aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2JsYWNrbWF0cml4Ny9pb3NfcnVsZV9zY3JpcHQvbWFzdGVyL3J1bGUvQ2xhc2gvQ2xhdWRlL0NsYXVkZS5saXN0"
+    format: 'yaml'
+    interval: 3600
+    path: ./ruleset/Claude.yaml
+  Gemini:
+    behavior: "classical"
+    type: http
+    url: "https://azsub.acousticlab.site/getruleset?type=6&url=aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2JsYWNrbWF0cml4Ny9pb3NfcnVsZV9zY3JpcHQvbWFzdGVyL3J1bGUvQ2xhc2gvR2VtaW5pL0dlbWluaS5saXN0"
+    format: 'yaml'
+    interval: 3600
+    path: ./ruleset/Gemini.yaml
+  Telegram:
+    behavior: "classical"
+    type: http
+    url: "https://azsub.acousticlab.site/getruleset?type=6&url=aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL0FDTDRTU1IvQUNMNFNTUi9tYXN0ZXIvQ2xhc2gvVGVsZWdyYW0ubGlzdA=="
+    format: 'yaml'
+    interval: 3600
+    path: ./ruleset/Telegram.yaml
+  YouTube:
+    behavior: "classical"
+    type: http
+    url: "https://azsub.acousticlab.site/getruleset?type=6&url=aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL0FDTDRTU1IvQUNMNFNTUi9tYXN0ZXIvQ2xhc2gvUnVsZXNldC9Zb3VUdWJlLmxpc3Q="
+    format: 'yaml'
+    interval: 3600
+    path: ./ruleset/YouTube.yaml
+  ProxyGFWlist:
+    behavior: "classical"
+    type: http
+    url: "https://azsub.acousticlab.site/getruleset?type=6&url=aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL0FDTDRTU1IvQUNMNFNTUi9tYXN0ZXIvQ2xhc2gvUHJveHlHRldsaXN0Lmxpc3Q="
+    format: 'yaml'
+    interval: 3600
+    path: ./ruleset/ProxyGFWlist.yaml
+
+rules:
+ - SCRIPT,quic,REJECT,no-resolve  # 必须加no-resolve，否则dns泄露了
+ - RULE-SET,Direct,DIRECT
+ - RULE-SET,Proxy,🔓 翻墙
+ - RULE-SET,OneDrive,☁️ 微软云盘
+ - RULE-SET,Microsoft,Ⓜ️ 微软服务
+ - RULE-SET,OpenAI,💡 AI
+ - RULE-SET,Claude,💡 AI
+ - RULE-SET,Gemini,💡 AI
+ - RULE-SET,Telegram,🔓 翻墙
+ - RULE-SET,YouTube,🔓 翻墙
+ - RULE-SET,ProxyGFWlist,🔓 翻墙
+ - MATCH,🍊 尚未匹配
