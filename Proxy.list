@@ -34,6 +34,7 @@ DOMAIN-SUFFIX,booksc.org
 DOMAIN-SUFFIX,zlibcdn.com
 DOMAIN-SUFFIX,b-ok.com
 DOMAIN-SUFFIX,gsu.edu
+DOMAIN-SUFFIX,byu.edu
 
 # Office
 PROCESS-NAME,POWERPNT.EXE
