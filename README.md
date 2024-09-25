@@ -1,5 +1,4 @@
 ## myrule
-自用配置，搭配 https://azsub.acousticlab.site 使用（在chatGPT帮助下，用蹩脚的代码写的）
 
 针对常见的需要翻墙的域名走【翻墙】，其余走【尚未匹配】，默认是直连。如果是你翻墙主要是为了谷歌全家桶，telegram，chatGPT，github，维基百科，国外社交网站等常见的内容，希望clash的rule规则尽可能精简，那么这个配置就非常适合你。
 
