@@ -1,0 +1,6 @@
+# 阻断信息流,网络毒药
+
+DOMAIN-SUFFIX,youtube.com
+DOMAIN-SUFFIX,bilibili.com
+DOMAIN-SUFFIX,zhihu.com
+DOMAIN-SUFFIX,douyin.com
