@@ -1,4 +1,4 @@
-name: 屏蔽QUIC 
+name: 屏蔽QUIC/淘宝视频
 desc: |-
   • 部分代理协议（如 Vmess）缺陷，不支持代理 UDP
   • QUIC 会导致部分 HTTP Engine 高级功能失效
