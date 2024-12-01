@@ -14,7 +14,6 @@ DOMAIN-SUFFIX,hostbuf.com
 DOMAIN-SUFFIX,sstatic.net
 DOMAIN-SUFFIX,deepl.com
 DOMAIN-SUFFIX,yankong.org
-DOMAIN-SUFFIX,x.com
 
 # blog websites
 DOMAIN-SUFFIX,bianyuan.xyz
@@ -26,7 +25,8 @@ DOMAIN-SUFFIX,v2rayssr.com
 DOMAIN-SUFFIX,hostloc.com
 DOMAIN-SUFFIX,ai55.cc
 DOMAIN-KEYWORD,bulianglin
-DOMAIN-KEYWORD,x.com
+DOMAIN-SUFFIX,x.com
+DOMAIN-SUFFIX,metacubex.one
 
 # 学术网站
 DOMAIN-SUFFIX,libgen.me
