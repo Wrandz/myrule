@@ -17,7 +17,6 @@ DOMAIN-SUFFIX,yankong.org
 DOMAIN-SUFFIX,gitbook.io
 DOMAIN,newhua99.com
 DOMAIN,speed.cloudflare.com
-IP-CIDR,47.236.28.78/32,no-resolve
 
 # blog websites
 DOMAIN-SUFFIX,bianyuan.xyz
