@@ -1,0 +1,236 @@
+mixed-port: 7890 # HTTP(S) 和 SOCKS 代理混合端口
+allow-lan: true # 允许局域网连接
+bind-address: "*" # 绑定 IP 地址，仅作用于 allow-lan 为 true，'*'表示所有地址
+authentication: # http,socks 入口的验证用户名，密码
+  - "zy:zyrule"
+skip-auth-prefixes: # 设置跳过验证的 IP 段
+  - 127.0.0.1/8
+  - ::1/128
+lan-allowed-ips: # 允许连接的 IP 地址段，仅作用于 allow-lan 为 true, 默认值为 0.0.0.0/0 和::/0
+  - 0.0.0.0/0
+  - ::/0
+lan-disallowed-ips: []
+
+#  find-process-mode has 3 values:always, strict, off
+#  - always, 开启，强制匹配所有进程
+#  - strict, 默认，由 mihomo 判断是否开启
+#  - off, 不匹配进程，推荐在路由器上使用此模式
+find-process-mode: strict
+
+mode: rule
+log-level: info
+ipv6: true # 开启 IPv6 总开关，关闭阻断所有 IPv6 链接和屏蔽 DNS 请求 AAAA 记录
+
+proxy-groups:
+  - name: 💩 Instagram
+    type: select
+    proxies:
+      - 🚀 手动切换
+      - ♻️ 自动选择
+      - 🚜 亚洲经济节点
+      - ⚡ 高倍率IEPL节点
+      - 🇸🇬 狮城节点
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇯🇵 日本节点
+      - 🇺🇲 美国节点
+      - 🇰🇷 韩国节点
+  - name: 💡 AI
+    type: select
+    proxies:
+      - 🔓 翻墙
+      - ♻️ 自动选择
+      - 🚀 手动切换
+      - 🚜 亚洲经济节点
+      - ⚡ 高倍率IEPL节点
+      - DIRECT
+      - 🇸🇬 狮城节点
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇯🇵 日本节点
+      - 🇺🇲 美国节点
+      - 🇰🇷 韩国节点
+  - name: 🍊 尚未匹配
+    type: select
+    proxies:
+      - DIRECT
+      - 🔓 翻墙
+      - ♻️ 自动选择
+      - 🚜 亚洲经济节点
+      - ⚡ 高倍率IEPL节点
+      - 🚀 手动切换
+      - 🇸🇬 狮城节点
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇯🇵 日本节点
+      - 🇺🇲 美国节点
+      - 🇰🇷 韩国节点
+  - name: 🔓 翻墙
+    type: select
+    proxies:
+      - ♻️ 自动选择
+      - 🚀 手动切换
+      - 🚜 亚洲经济节点
+      - ⚡ 高倍率IEPL节点
+      - 🇸🇬 狮城节点
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇯🇵 日本节点
+      - 🇺🇲 美国节点
+      - 🇰🇷 韩国节点
+  - name: 🚀 手动切换
+    include-all: true
+    type: select
+  - name: ♻️ 自动选择
+    include-all: true
+    exclude-filter: (?i)GB|剩余|流量|套餐|地址|网址|官网
+    type: url-test
+    interval: 300
+  - name: 🚜 亚洲经济节点
+    include-all: true
+    exclude-filter: (?i)GB|剩余|流量|套餐|地址|网址|官网|IEPL|专线|x2.5|x3|x4|x5|x6|3.0x|4.0x|5.0x|6.0x
+    filter: (?i)港|HK|日本|JP|台|TW|新加坡|SG|KR|韩|亚洲|马来|泰|越|印|MY
+    type: url-test
+    interval: 300
+  - name: ⚡ 高倍率IEPL节点
+    include-all: true
+    exclude-filter: (?i)GB|剩余|流量|套餐|地址|网址|官网
+    filter: (?i)IEPL|专线|x2.5|x3|x4|x5|x6|3.0x|4.0x|5.0x|6.0x
+    type: url-test
+    interval: 300
+  - name: 🇭🇰 香港节点
+    include-all: true
+    exclude-filter: (?i)GB|剩余|流量|套餐|地址|网址|官网
+    filter: (?i)港|HK
+    type: url-test
+    interval: 300
+  - name: 🇯🇵 日本节点
+    include-all: true
+    exclude-filter: (?i)GB|剩余|流量|套餐|地址|网址|官网
+    filter: (?i)日本|JP
+    type: url-test
+    interval: 300
+  - name: 🇺🇲 美国节点
+    include-all: true
+    exclude-filter: (?i)GB|剩余|流量|套餐|地址|网址|官网
+    filter: (?i)美|US
+    type: url-test
+    interval: 300
+  - name: 🇨🇳 台湾节点
+    include-all: true
+    exclude-filter: (?i)GB|剩余|流量|套餐|地址|网址|官网
+    filter: (?i)台|TW
+    type: url-test
+    interval: 300
+  - name: 🇸🇬 狮城节点
+    include-all: true
+    exclude-filter: (?i)GB|剩余|流量|套餐|地址|网址|官网
+    filter: (?i)新加坡|SG
+    type: url-test
+    interval: 300
+  - name: 🇰🇷 韩国节点
+    include-all: true
+    exclude-filter: (?i)GB|剩余|流量|套餐|地址|网址|官网
+    filter: (?i)KR|韩
+    type: url-test
+    interval: 300
+
+rule-providers:
+  REJECT:
+    behavior: classical # domain ipcidr
+    interval: 86400 # 1天
+    type: http # http 的 path 可空置，默认储存路径为 homedir 的 rules 文件夹，文件名为 url 的 md5
+    url: "https://raw.githubusercontent.com/Wrandz/myrule/main/Reject.list"
+    format: text
+    proxy: 🔓 翻墙
+    size-limit: 0 # 限制下载文件最大为10kb，默认为0即不限制文件大小
+  DIRECT:
+    behavior: classical
+    interval: 86400
+    type: http
+    url: "https://raw.githubusercontent.com/Wrandz/myrule/main/Direct.list"
+    format: text
+    proxy: 🔓 翻墙
+    size-limit: 0
+  PROXY:
+    behavior: classical
+    interval: 86400
+    type: http
+    url: "https://raw.githubusercontent.com/Wrandz/myrule/main/Proxy.list"
+    format: text
+    proxy: 🔓 翻墙
+    size-limit: 0
+  OneDrive:
+    behavior: classical
+    interval: 86400
+    type: http
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/OneDrive.list"
+    format: text
+    proxy: 🔓 翻墙
+    size-limit: 0
+  Instagram:
+    behavior: domain
+    interval: 86400
+    type: http
+    url: "https://raw.githubusercontent.com/666OS/rules/refs/heads/release/mihomo/domain/Instagram.txt"
+    format: text
+    proxy: 🔓 翻墙
+    size-limit: 0
+  AI:
+    behavior: domain
+    interval: 86400
+    type: http
+    url: "https://raw.githubusercontent.com/666OS/rules/refs/heads/release/mihomo/domain/AI.txt"
+    format: text
+    proxy: 🔓 翻墙
+    size-limit: 0
+  TelegramDomain:
+    behavior: domain
+    interval: 86400
+    type: http
+    url: "https://raw.githubusercontent.com/666OS/rules/refs/heads/release/mihomo/domain/Telegram.txt"
+    format: text
+    proxy: 🔓 翻墙
+    size-limit: 0
+  TelegramIP:
+    behavior: ipcidr
+    interval: 86400
+    type: http
+    url: "https://raw.githubusercontent.com/666OS/rules/refs/heads/release/mihomo/ip/Telegram.txt"
+    format: text
+    proxy: 🔓 翻墙
+    size-limit: 0
+  Youtube:
+    behavior: domain
+    interval: 86400
+    type: http
+    url: "https://raw.githubusercontent.com/666OS/rules/refs/heads/release/mihomo/domain/YouTube.txt"
+    format: text
+    proxy: 🔓 翻墙
+    size-limit: 0
+  GFWlist:
+    behavior: domain
+    interval: 86400
+    type: http
+    url: "https://raw.githubusercontent.com/666OS/rules/refs/heads/release/mihomo/domain/Proxy.txt"
+    format: text
+    proxy: 🔓 翻墙
+    size-limit: 0
+
+rules:
+  - AND,((NETWORK,UDP),(DST-PORT,443)),REJECT
+  - AND,((NETWORK,UDP),(DST-PORT,4483)),REJECT
+  - AND,((NETWORK,UDP),(DST-PORT,9305)),REJECT
+  - IP-CIDR,47.236.28.78/32,⚡ 高倍率IEPL节点,no-resolve
+  - RULE-SET,REJECT,REJECT
+  - RULE-SET,DIRECT,DIRECT
+  - RULE-SET,PROXY,🔓 翻墙
+  - RULE-SET,Instagram,🔓 翻墙
+  - RULE-SET,AI,🔓 翻墙
+  - RULE-SET,TelegramDomain,🔓 翻墙
+  - RULE-SET,TelegramIP,🔓 翻墙,no-resolve
+  - RULE-SET,Youtube,🔓 翻墙
+  - RULE-SET,GFWlist,🔓 翻墙
+  - MATCH,🍊 尚未匹配
+  
+
