@@ -196,7 +196,7 @@ rule-providers:
     behavior: ipcidr
     interval: 86400
     type: http
-    url: "https://raw.githubusercontent.com/666OS/rules/refs/heads/release/mihomo/ip/Telegram.txt"
+    url: "https://ruleset.skk.moe/Clash/ip/telegram.txt"
     format: text
     proxy: 🔓 翻墙
     size-limit: 0
