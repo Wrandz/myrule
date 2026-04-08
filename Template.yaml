@@ -193,7 +193,7 @@ rule-providers:
     proxy: 🔓 翻墙
     size-limit: 0
   TelegramIP:
-    behavior: ipcidr
+    behavior: classical
     interval: 86400
     type: http
     url: "https://ruleset.skk.moe/Clash/ip/telegram.txt"
