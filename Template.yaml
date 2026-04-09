@@ -136,11 +136,11 @@ proxy-groups:
     interval: 300
 
 rule-providers:
-  REJECT:
-    behavior: classical # domain ipcidr
+  REJECTDomain:
+    behavior: domain # domain ipcidr
     interval: 86400 # 1天
     type: http # http 的 path 可空置，默认储存路径为 homedir 的 rules 文件夹，文件名为 url 的 md5
-    url: "https://raw.githubusercontent.com/Wrandz/myrule/main/Reject.list"
+    url: "https://raw.githubusercontent.com/Wrandz/myrule/main/RejectDomain.list"
     format: text
     proxy: 🔓 翻墙
     size-limit: 0 # 限制下载文件最大为10kb，默认为0即不限制文件大小
@@ -152,19 +152,27 @@ rule-providers:
     format: text
     proxy: 🔓 翻墙
     size-limit: 0
-  PROXY:
+  PROXYDomain:
+    behavior: domain
+    interval: 86400
+    type: http
+    url: "https://raw.githubusercontent.com/Wrandz/myrule/main/ProxyDomain.list"
+    format: text
+    proxy: 🔓 翻墙
+    size-limit: 0
+  PROXYKeyword:
     behavior: classical
     interval: 86400
     type: http
-    url: "https://raw.githubusercontent.com/Wrandz/myrule/main/Proxy.list"
+    url: "https://raw.githubusercontent.com/Wrandz/myrule/main/ProxyKeyword.list"
     format: text
     proxy: 🔓 翻墙
     size-limit: 0
   OneDrive:
-    behavior: classical
+    behavior: domain
     interval: 86400
     type: http
-    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/OneDrive.list"
+    url: "https://raw.githubusercontent.com/666OS/rules/refs/heads/release/mihomo/domain/OneDrive.txt"
     format: text
     proxy: 🔓 翻墙
     size-limit: 0
@@ -184,19 +192,11 @@ rule-providers:
     format: text
     proxy: 🔓 翻墙
     size-limit: 0
-  TelegramDomain:
-    behavior: domain
-    interval: 86400
-    type: http
-    url: "https://raw.githubusercontent.com/666OS/rules/refs/heads/release/mihomo/domain/Telegram.txt"
-    format: text
-    proxy: 🔓 翻墙
-    size-limit: 0
-  TelegramIP:
+  Telegram:
     behavior: classical
     interval: 86400
     type: http
-    url: "https://ruleset.skk.moe/Clash/ip/telegram.txt"
+    url: "https://raw.githubusercontent.com/666OS/rules/refs/heads/release/mihomo/Telegram.txt"
     format: text
     proxy: 🔓 翻墙
     size-limit: 0
@@ -224,7 +224,8 @@ rules:
   - IP-CIDR,47.236.28.78/32,⚡ 高倍率IEPL节点,no-resolve
   - RULE-SET,REJECT,REJECT
   - RULE-SET,DIRECT,DIRECT
-  - RULE-SET,PROXY,🔓 翻墙
+  - RULE-SET,PROXYKeyword,🔓 翻墙
+  - RULE-SET,PROXYDomain,🔓 翻墙
   - RULE-SET,Instagram,🔓 翻墙
   - RULE-SET,AI,🔓 翻墙
   - RULE-SET,TelegramDomain,🔓 翻墙
