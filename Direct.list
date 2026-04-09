@@ -3,7 +3,7 @@
 # 变动ip会导致验证码,很烦
 DOMAIN-SUFFIX,m-team.cc
 
-% 学术网站
+# 学术网站
 DOMAIN-KEYWORD,zotero
 
 # Onedrive规则，在ACL4SSR中有，用直连规则覆盖那里的代理规则
