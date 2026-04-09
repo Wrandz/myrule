@@ -222,14 +222,13 @@ rules:
   - AND,((NETWORK,UDP),(DST-PORT,4483)),REJECT
   - AND,((NETWORK,UDP),(DST-PORT,9305)),REJECT
   - IP-CIDR,47.236.28.78/32,⚡ 高倍率IEPL节点,no-resolve
-  - RULE-SET,REJECT,REJECT
+  - RULE-SET,REJECTDomain,REJECT
   - RULE-SET,DIRECT,DIRECT
   - RULE-SET,PROXYKeyword,🔓 翻墙
   - RULE-SET,PROXYDomain,🔓 翻墙
   - RULE-SET,Instagram,🔓 翻墙
   - RULE-SET,AI,🔓 翻墙
-  - RULE-SET,TelegramDomain,🔓 翻墙
-  - RULE-SET,TelegramIP,🔓 翻墙,no-resolve
+  - RULE-SET,Telegram,🔓 翻墙
   - RULE-SET,Youtube,🔓 翻墙
   - RULE-SET,GFWlist,🔓 翻墙
   - MATCH,🍊 尚未匹配
