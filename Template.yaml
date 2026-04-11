@@ -226,8 +226,8 @@ rules:
   - RULE-SET,DIRECT,DIRECT
   - RULE-SET,PROXYKeyword,🔓 翻墙
   - RULE-SET,PROXYDomain,🔓 翻墙
-  - RULE-SET,Instagram,🔓 翻墙
-  - RULE-SET,AI,🔓 翻墙
+  - RULE-SET,Instagram,💩 Instagram
+  - RULE-SET,AI,💡 AI
   - RULE-SET,Telegram,🔓 翻墙
   - RULE-SET,Youtube,🔓 翻墙
   - RULE-SET,GFWlist,🔓 翻墙
